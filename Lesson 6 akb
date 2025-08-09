@@ -1,0 +1,61 @@
+
+def main():
+    print("Welcome to the Student Information System!")
+
+    students = {}
+
+    students["Val"] = {
+        "ID": "S001",
+        "GPA": 3.8,
+        "Credits Completed": 45,
+        "Grades": [88, 92, 79]
+    }
+    students["Kurt"] = {
+        "ID": "S002",
+        "GPA": 3.2,
+        "Credits Completed": 60,
+        "Grades": [75, 85, 90]
+    }
+    students["Sam"] = {
+        "ID": "S003",
+        "GPA": 3.5,
+        "Credits Completed": 30,
+        "Grades": [80, 70, 95]
+    }
+
+    print("\nFull Student Information Dictionary:")
+    print(students)
+
+    print("\nListing Student Names:")
+    for name in students:
+        print(name)
+
+    print("\nAccessing Student Information:")
+    print("Name\t\tID\tGPA\tCredits\tGrades")
+    print("-" * 50)
+    for name, info in students.items():
+        print(f"{name}\t{info['ID']}\t{info['GPA']}\t{info['Credits Completed']}\t{info['Grades']}")
+
+    print("\nRemoving a Student")
+    student_to_remove = "Val"
+    if student_to_remove in students:
+        students.pop(student_to_remove)
+        print(f"{student_to_remove} has been removed.")
+    else:
+        print(f"{student_to_remove} not found.")
+    
+    print("\nUpdated Student Dictionary:")
+    print(students)
+
+    print("\nAccessing GPA Information:")
+    for name in students:
+        gpa = students.get(name).get("GPA")
+        print(f"{name}'s GPA is {gpa}")
+
+    print("\nClearing Student Registry...")
+    students.clear()
+    print("Student registry has been cleared.")
+    print("Current contents of students dictionary:", students)
+
+main()
+print("this was completed by Annaleigh Baumgartner")
